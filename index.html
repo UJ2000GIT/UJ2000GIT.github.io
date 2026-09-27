@@ -32,6 +32,31 @@
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/4bf48f78b4.js" crossorigin="anonymous"></script>
   <style>
+    /* Footer: name | links | icons evenly spaced on one row */
+    @media screen and (min-width: 768px) {
+      .footer_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .footer_links {
+        flex-direction: row;
+        column-gap: 2.5rem;
+        margin: 0;
+      }
+
+      .footer_link {
+        white-space: nowrap;
+      }
+
+      .footer_socials {
+        display: flex;
+        column-gap: 1.25rem;
+      }
+    }
+
     /* Availability line under hero Contact button */
     .home_open {
       margin-top: var(--mb-1);
@@ -63,9 +88,10 @@
     /* Nav logo: full name, bold, red accent dot */
     .nav_logo {
       font-weight: var(--font-semi-bold);
-      font-size: 1.05rem;
-      letter-spacing: -0.01em;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
       white-space: nowrap;
+      line-height: 1;
     }
 
     .nav_logo-dot {
@@ -73,8 +99,12 @@
       font-weight: var(--font-semi-bold);
     }
 
+    @media screen and (min-width: 768px) {
+      .nav_logo { font-size: 1.75rem; }
+    }
+
     @media screen and (max-width: 400px) {
-      .nav_logo { font-size: 0.9rem; }
+      .nav_logo { font-size: 1.1rem; }
     }
 
     /* Skills chip grid */
@@ -317,7 +347,7 @@
             <div class="qualification_data">
               <div>
                 <h3 class="qualification_title">CAD Certification – SolidWorks, AutoCAD, Siemens NX</h3>
-                <span class="qualification_subtitle">Indo-German Tool Room, Ahmedabad</span>
+                <span class="qualification_subtitle"><a href="https://www.igtrahd.com/" target="_blank" rel="noopener noreferrer">Indo-German Tool Room, Ahmedabad</a></span>
                 <div class="qualification_calendar">
                   <i class="uil uil-calendar-alt"></i> 2022
                 </div>
@@ -335,7 +365,7 @@
               </div>
               <div>
                 <h3 class="qualification_title">Lean Six Sigma Yellow Belt</h3>
-                <span class="qualification_subtitle">ASU Ira A. Fulton Schools of Engineering</span>
+                <span class="qualification_subtitle"><a href="https://engineering.asu.edu/" target="_blank" rel="noopener noreferrer">ASU Ira A. Fulton Schools of Engineering</a></span>
                 <div class="qualification_calendar">
                   <i class="uil uil-calendar-alt"></i> Dec 2025
                 </div>
@@ -369,7 +399,7 @@
               </div>
               <div>
                 <h3 class="qualification_title">Graduate Research Assistant</h3>
-                <span class="qualification_subtitle"><a href="https://www.asu.edu" target="_blank" rel="noopener noreferrer">Dr. Qiong Nian's Lab, ASU</a></span>
+                <span class="qualification_subtitle"><a href="https://labs.engineering.asu.edu/mmmp/" target="_blank" rel="noopener noreferrer">Dr. Qiong Nian's Lab, ASU</a></span>
                 <div class="qualification_calendar">
                   <i class="uil uil-calendar-alt"></i> 2024 – 2026
                 </div>
@@ -398,7 +428,7 @@
               </div>
               <div>
                 <h3 class="qualification_title">Quality Inspector</h3>
-                <span class="qualification_subtitle">Gangadhar Industries</span>
+                <span class="qualification_subtitle"><a href="https://www.gangadharindtree.com/" target="_blank" rel="noopener noreferrer">Gangadhar Industries</a></span>
                 <div class="qualification_calendar">
                   <i class="uil uil-calendar-alt"></i> 2022 – 2023
                 </div>
