@@ -32,6 +32,30 @@
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/4bf48f78b4.js" crossorigin="anonymous"></script>
   <style>
+    /* Home blob: gentle float + subtle breathe.
+       Applied to the .home_img WRAPPER, not the SVG — the SVG carries
+       data-tilt and tilt.js writes inline transform to it, so the two
+       would fight if they shared an element. */
+    @keyframes blob-breathe {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-6px) scale(1.025);
+      }
+    }
+
+    .home_img {
+      animation: blob-breathe 4s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .home_img {
+        animation: none;
+      }
+    }
+
     /* Footer: name | links | icons evenly spaced on one row */
     @media screen and (min-width: 768px) {
       .footer_container {
