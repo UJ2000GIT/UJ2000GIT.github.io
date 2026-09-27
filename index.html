@@ -31,6 +31,41 @@
   <title>Utsav Amrish Joshi</title>
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/4bf48f78b4.js" crossorigin="anonymous"></script>
+  <style>
+    /* Skills chip grid */
+    .skills_chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .skill_chip {
+      background-color: var(--container-color);
+      color: var(--title-color);
+      font-family: var(--body-font);
+      font-size: var(--normal-font-size);
+      font-weight: var(--font-medium);
+      padding: 0.9rem 1.6rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s, box-shadow 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+
+    .skill_chip:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      color: var(--first-color);
+    }
+
+    @media screen and (max-width: 350px) {
+      .skills_chips { gap: 0.75rem; }
+      .skill_chip { padding: 0.7rem 1.1rem; font-size: var(--small-font-size); }
+    }
+  </style>
 </head>
 
 <body>
@@ -167,122 +202,20 @@
 
     <!-- Skills -->
     <section class="skills section" id="skills">
-      <h1 class="section_title">Skills</h1>
-      <span class="section_subtitle">My Technical Skills</span>
-      <div class="skills_container container grid">
+      <h2 class="section_title">Skills</h2>
+      <span class="section_subtitle">Tools and methods I work with</span>
 
-        <!-- Skill Set 1: CAD & Design -->
-        <div class="skill skills_content skills_open">
-          <div class="skills_header">
-            <i class="uil uil-cube skills_icon"></i>
-            <div>
-              <h1 class="skills_title">CAD &amp; Design</h1>
-              <span class="skills_subtitle">Design and modeling tools I use</span>
-            </div>
-            <i class="uil uil-angle-down skills_arrow"></i>
-          </div>
-          <div class="skills_list grid">
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-vector-square"></i></span>
-                <h3 class="skills_name">SolidWorks</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-ruler-combined"></i></span>
-                <h3 class="skills_name">AutoCAD</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-layer-group"></i></span>
-                <h3 class="skills_name">Siemens NX</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill Set 2: Simulation & Analysis -->
-        <div class="skill skills_content">
-          <div class="skills_header">
-            <i class="uil uil-calculator-alt skills_icon"></i>
-            <div>
-              <h1 class="skills_title">Simulation &amp; Analysis</h1>
-              <span class="skills_subtitle">Software for engineering analysis</span>
-            </div>
-            <i class="uil uil-angle-down skills_arrow"></i>
-          </div>
-          <div class="skills_list grid">
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-processor"></i></span>
-                <h3 class="skills_name">ANSYS</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-chart-line"></i></span>
-                <h3 class="skills_name">COMSOL</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-chart-bar"></i></span>
-                <h3 class="skills_name">MATLAB</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill Set 3: Manufacturing & Quality -->
-        <div class="skill skills_content">
-          <div class="skills_header">
-            <i class="uil uil-wrench skills_icon"></i>
-            <div>
-              <h1 class="skills_title">Manufacturing &amp; Quality</h1>
-              <span class="skills_subtitle">Methods and standards I apply on the job</span>
-            </div>
-            <i class="uil uil-angle-down skills_arrow"></i>
-          </div>
-          <div class="skills_list grid">
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-award"></i></span>
-                <h3 class="skills_name">Lean Six Sigma</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-ruler"></i></span>
-                <h3 class="skills_name">GD&amp;T</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-sitemap"></i></span>
-                <h3 class="skills_name">P&amp;ID</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-            <div class="skills_data">
-              <div class="skills_titles">
-                <span class="single_skill_icon"><i class="uil uil-shield-check"></i></span>
-                <h3 class="skills_name">FMEA</h3>
-              </div>
-              <div class="skills_bar"></div>
-            </div>
-          </div>
-        </div>
-
+      <div class="skills_chips container">
+          <span class="skill_chip">SolidWorks</span>
+          <span class="skill_chip">AutoCAD</span>
+          <span class="skill_chip">Siemens NX</span>
+          <span class="skill_chip">ANSYS</span>
+          <span class="skill_chip">COMSOL</span>
+          <span class="skill_chip">MATLAB</span>
+          <span class="skill_chip">Lean Six Sigma</span>
+          <span class="skill_chip">GD&amp;T</span>
+          <span class="skill_chip">P&amp;ID</span>
+          <span class="skill_chip">FMEA</span>
       </div>
     </section>
 
