@@ -2,7 +2,7 @@
 
 Personal portfolio site: mechanical / manufacturing engineering projects, skills, and qualifications.
 
-- **Live site:** https://uj2000git.github.io
+- **Live site:** https://utsavaj.github.io
 - **Stack:** static HTML, CSS, and vanilla JavaScript (no build step), hosted on GitHub Pages
 - **Contact form:** [Formspree](https://formspree.io)
 
