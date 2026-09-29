@@ -118,21 +118,43 @@ workheader.addEventListener("click", () => {
   }
 });
 
-// PORTFOLIO SWIPER
-let swiper = new Swiper(".mySwiper", {
-  cssMode: true,
-  loop: true,
+// PROJECTS: technical-details expand/collapse
+// The panel is sized to its real content height (figures, wrapped text) so
+// nothing gets clipped; it is re-measured on resize and when images load.
+function fitPortfolioDetails(details) {
+  details.style.maxHeight = details.scrollHeight + "px";
+}
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  mousewheel: true,
-  keyboard: true,
+document.querySelectorAll(".portfolio_toggle").forEach((toggle) => {
+  const label = toggle.querySelector(".portfolio_toggle-label");
+  const details = toggle.nextElementSibling;
+
+  details.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("load", () => {
+      if (details.classList.contains("is-open")) fitPortfolioDetails(details);
+    });
+  });
+
+  toggle.addEventListener("click", () => {
+    const isOpen = !toggle.classList.contains("is-open");
+    toggle.classList.toggle("is-open", isOpen);
+    details.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    if (isOpen) {
+      fitPortfolioDetails(details);
+    } else {
+      details.style.maxHeight = "";
+    }
+    if (label) {
+      label.textContent = isOpen ? "Hide technical details" : "View technical details";
+    }
+  });
+});
+
+window.addEventListener("resize", () => {
+  document
+    .querySelectorAll(".portfolio_details.is-open")
+    .forEach(fitPortfolioDetails);
 });
 
 // SCROLL SECTIONS ACTIVE LINK
