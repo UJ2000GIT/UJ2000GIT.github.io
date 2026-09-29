@@ -317,3 +317,12 @@
   text-align: center;
   margin-top: var(--mb-2);
 }
+
+/* Hero: primary + secondary buttons */
+.home_buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+.button--outline {
+  background: transparent;
+  color: var(--first-color);
+  box-shadow: inset 0 0 0 2px var(--first-color);
+}
+.button--outline:hover { background: var(--first-color); color: #fff; }
