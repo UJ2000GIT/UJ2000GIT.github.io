@@ -10,7 +10,7 @@
   <meta name="keywords"
     content="Utsav Amrish Joshi, Utsav Joshi, Mechanical Engineer, Manufacturing Engineer, Quality Engineer, ASU, Arizona State University, SolidWorks, AutoCAD, Siemens NX, Lean Six Sigma, COMSOL, ANSYS, Phoenix Arizona, process improvement">
   <meta name="author" content="Utsav Amrish Joshi">
-  <meta property="og:title" content="Utsav Amrish Joshi" />
+  <meta property="og:title" content="Utsav Amrish Joshi | Mechanical &amp; Manufacturing Engineer" />
   <meta property="og:url" content="https://uj2000git.github.io" />
   <meta property="og:description"
     content="Utsav Amrish Joshi is a Mechanical Engineer with an M.S. from Arizona State University, specializing in manufacturing process improvement, quality engineering, and CAD design." />
@@ -20,331 +20,17 @@
   <meta property="og:image:secure_url" content="https://uj2000git.github.io/assets/img/about.jpg" />
   <meta property="og:image:alt" content="Utsav Amrish Joshi — Mechanical Engineer" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Utsav Amrish Joshi" />
+  <meta name="twitter:title" content="Utsav Amrish Joshi | Mechanical &amp; Manufacturing Engineer" />
   <meta name="twitter:description" content="Utsav Amrish Joshi is a Mechanical Engineer with an M.S. from Arizona State University, specializing in manufacturing process improvement, quality engineering, and CAD design." />
   <meta name="twitter:image" content="https://uj2000git.github.io/assets/img/about.jpg" />
   <meta name="theme-color" content="#7d6bd6">
   <link rel="canonical" href="https://uj2000git.github.io" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Utsav Amrish Joshi</title>
+  <title>Utsav Amrish Joshi | Mechanical &amp; Manufacturing Engineer</title>
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/4bf48f78b4.js" crossorigin="anonymous"></script>
-  <style>
-    /* Home blob: gentle float + subtle breathe.
-       Applied to the .home_img WRAPPER, not the SVG — the SVG carries
-       data-tilt and tilt.js writes inline transform to it, so the two
-       would fight if they shared an element. */
-    @keyframes blob-breathe {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        transform: translateY(-6px) scale(1.025);
-      }
-    }
-
-    .home_img {
-      animation: blob-breathe 4s ease-in-out infinite;
-      will-change: transform;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .home_img {
-        animation: none;
-      }
-    }
-
-    /* Projects: stacked technical case-study cards (replaces the swiper carousel) */
-    .portfolio_container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .portfolio_content {
-      display: block;
-      background-color: var(--container-color);
-      border-radius: 1rem;
-      padding: 2rem 2rem;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .portfolio_result {
-      color: var(--title-color);
-      font-weight: var(--font-medium);
-      font-size: var(--normal-font-size);
-      margin-bottom: var(--mb-0-75);
-    }
-
-    .portfolio_tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: var(--mb-1);
-    }
-
-    .portfolio_tag {
-      font-size: var(--smaller-font-size);
-      font-weight: var(--font-medium);
-      color: var(--first-color);
-      border: 1px solid var(--first-color);
-      border-radius: 1rem;
-      padding: 0.3rem 0.85rem;
-    }
-
-    .portfolio_toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--first-color);
-      font-family: var(--body-font);
-      font-size: var(--small-font-size);
-      font-weight: var(--font-medium);
-      padding: 0.5rem 0;
-      margin-bottom: 0.25rem;
-    }
-
-    .portfolio_toggle-icon {
-      transition: transform 0.25s ease;
-    }
-
-    .portfolio_toggle.is-open .portfolio_toggle-icon {
-      transform: rotate(180deg);
-    }
-
-    .portfolio_details {
-      box-sizing: border-box;
-      max-height: 0;
-      overflow: hidden;
-      text-align: left;
-      transition: max-height 0.4s ease;
-    }
-
-    /* JS sets an exact max-height on open; this is only the no-JS-measure fallback */
-    .portfolio_details.is-open {
-      max-height: 4000px;
-      padding-bottom: var(--mb-1);
-    }
-
-    .portfolio_details-title {
-      font-size: var(--small-font-size);
-      font-weight: var(--font-semi-bold);
-      color: var(--title-color);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-top: var(--mb-1);
-      margin-bottom: var(--mb-0-25);
-    }
-
-    .portfolio_details-text {
-      font-size: var(--small-font-size);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    .portfolio_details-pending {
-      font-style: italic;
-      color: var(--text-color-light);
-    }
-
-    .portfolio_details-list {
-      margin: 0;
-      padding-left: 1.1rem;
-      font-size: var(--small-font-size);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    .portfolio_details-list li {
-      margin-bottom: 0.4rem;
-    }
-
-    .portfolio_details-list strong {
-      color: var(--title-color);
-      font-weight: var(--font-medium);
-    }
-
-    .portfolio_eq {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: var(--small-font-size);
-      color: var(--title-color);
-      background-color: var(--input-color);
-      border-radius: 0.4rem;
-      padding: 0.6rem 0.8rem;
-      margin: 0.6rem 0;
-      overflow-x: auto;
-    }
-
-    .portfolio_figure {
-      margin: var(--mb-1) 0 0;
-      text-align: center;
-    }
-
-    .portfolio_figure img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
-      border-radius: 0.5rem;
-      border: 1px solid var(--scroll-bar-color);
-      background-color: #fff;
-    }
-
-    .portfolio_figure-small img {
-      max-width: 340px;
-    }
-
-    .portfolio_figure figcaption {
-      font-size: var(--smaller-font-size);
-      color: var(--text-color-light);
-      margin-top: 0.5rem;
-    }
-
-    .portfolio_group {
-      text-align: center;
-    }
-
-    .portfolio_group-title {
-      font-size: var(--h2-font-size);
-      color: var(--title-color);
-      margin-bottom: var(--mb-0-25);
-    }
-
-    .portfolio_group-meta {
-      font-size: var(--small-font-size);
-      color: var(--text-color);
-    }
-
-    .portfolio_content + .portfolio_group {
-      margin-top: var(--mb-1-5);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .portfolio_details,
-      .portfolio_toggle-icon {
-        transition: none;
-      }
-    }
-
-    /* Footer: name | links | icons evenly spaced on one row */
-    @media screen and (min-width: 768px) {
-      .footer_container {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        align-items: center;
-        column-gap: 2rem;
-      }
-
-      .footer_links {
-        flex-direction: row;
-        column-gap: 1.5rem;
-        margin: 0;
-        justify-self: center;
-      }
-
-      .footer_link {
-        white-space: nowrap;
-      }
-
-      .footer_socials {
-        display: flex;
-        column-gap: 1.25rem;
-        justify-self: end;
-      }
-    }
-
-    /* Availability line under hero Contact button */
-    .home_open {
-      margin-top: var(--mb-1);
-      font-size: var(--small-font-size);
-      font-weight: var(--font-medium);
-      color: var(--text-color);
-    }
-
-    /* Footer name stays on one line */
-    .footer_title {
-      white-space: nowrap;
-      font-size: 1.5rem;
-    }
-
-    @media screen and (min-width: 968px) {
-      .footer_title { font-size: 1.85rem; }
-    }
-
-    @media screen and (max-width: 400px) {
-      .footer_title { font-size: 1.2rem; }
-    }
-
-    /* Profile photo fills the blob shape */
-    .home_blob-img {
-      width: 200px;
-      height: 187px;
-    }
-
-    /* Nav logo: full name, bold, red accent dot */
-    .nav_logo {
-      font-weight: var(--font-semi-bold);
-      font-size: 1.4rem;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-      line-height: 1;
-    }
-
-    .nav_logo-dot {
-      color: #ef4444;
-      font-weight: var(--font-semi-bold);
-    }
-
-    @media screen and (min-width: 768px) {
-      .nav_logo { font-size: 1.4rem; }
-    }
-
-    @media screen and (max-width: 400px) {
-      .nav_logo { font-size: 1.1rem; }
-    }
-
-    /* Skills chip grid */
-    .skills_chips {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .skill_chip {
-      background-color: var(--container-color);
-      color: var(--title-color);
-      font-family: var(--body-font);
-      font-size: var(--normal-font-size);
-      font-weight: var(--font-medium);
-      padding: 0.9rem 1.6rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.25s, box-shadow 0.25s, color 0.25s;
-      white-space: nowrap;
-    }
-
-    .skill_chip:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      color: var(--first-color);
-    }
-
-    @media screen and (max-width: 350px) {
-      .skills_chips { gap: 0.75rem; }
-      .skill_chip { padding: 0.7rem 1.1rem; font-size: var(--small-font-size); }
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/custom.css" />
 </head>
 
 <body>
@@ -361,8 +47,8 @@
             </a>
           </li>
           <li class="nav_item">
-            <a href="#about" class="nav_link">
-              <i class="uil uil-user nav_icon"></i> About
+            <a href="#projects" class="nav_link">
+              <i class="uil uil-scenery nav_icon"></i> Projects
             </a>
           </li>
           <li class="nav_item">
@@ -376,8 +62,8 @@
             </a>
           </li>
           <li class="nav_item">
-            <a href="#projects" class="nav_link">
-              <i class="uil uil-scenery nav_icon"></i> Projects
+            <a href="#about" class="nav_link">
+              <i class="uil uil-user nav_icon"></i> About
             </a>
           </li>
           <li class="nav_item">
@@ -429,7 +115,7 @@
                     129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
                 <image class="home_blob-img" x="0" y="0" width="200" height="187"
-                  preserveAspectRatio="xMidYMid slice" href="./assets/img/icon.png" />
+                  preserveAspectRatio="xMidYMid slice" href="./assets/img/icon.jpg" />
               </g>
             </svg>
           </div>
@@ -449,7 +135,7 @@
         </div>
 
         <div class="home_scroll">
-          <a href="#about" class="home_scroll-button button--flex">
+          <a href="#projects" class="home_scroll-button button--flex">
             <i class="uil uil-mouse-alt home_scroll-mouse"></i>
             <span class="home_scroll-name">Scroll Down</span>
             <i class="uil uil-arrow-down home_scroll-arrow"></i>
@@ -458,26 +144,387 @@
       </div>
     </section>
 
-    <!-- About -->
-    <section class="about section" id="about">
-      <h2 class="section_title">About Me</h2>
-      <span class="section_subtitle">My introduction</span>
-      <div class="about_container container grid">
-        <img src="./assets/img/about.jpg" alt="Utsav Amrish Joshi" class="about_img" data-tilt />
-        <div class="about_data">
-          <p class="about_description">
-            Hey there! 👋 I'm Utsav, a Mechanical Engineer with an M.S. from Arizona State University (GPA 3.43).
-            I have hands-on experience in manufacturing process improvement, quality inspection, P&amp;ID development,
-            and CAD design. My internship at Shamrock Foods gave me real shop-floor exposure, and my research at ASU
-            involved multiphysics simulation for semiconductor processing. I'm currently looking for full-time roles
-            in manufacturing, quality, or mechanical design engineering.
+    <!-- Projects -->
+    <section class="portfolio section" id="projects">
+      <h2 class="section_title">Projects</h2>
+      <span class="section_subtitle">Selected Work</span>
+
+      <div class="portfolio_container container">
+
+        <!-- ===== Group 1: Shamrock Foods ===== -->
+        <div class="portfolio_group">
+          <h3 class="portfolio_group-title">Manufacturing Engineering Internship</h3>
+          <p class="portfolio_group-meta">
+            Shamrock Foods Company &middot; Gold Canyon Meat Co. &middot; May &ndash; July 2026 &middot;
+            ~450,000 sq ft meat-processing plant, 11 production lines
           </p>
-          <div class="about_button">
-            <a download="" href="./Utsav_Joshi_Resume_v4.pdf" class="button button--flex" target="_blank">
-              Resume <i class="uil uil-file-download-alt button_icon"></i>
-            </a>
+        </div>
+
+        <!-- Project 1: Automation ROI -->
+        <div class="portfolio_content">
+          <div class="portfolio_data">
+            <h3 class="portfolio_title">Automated Sorting &amp; Labeling System &ndash; Time Study and Automation ROI</h3>
+            <p class="portfolio_result">
+              Time-studied 48.0 labor-hr/day of automatable work and showed a $3.0M sorting system doesn't pay back at current throughput.
+            </p>
+            <p class="portfolio_description">
+              Answered one question for plant leadership: how much warehouse labor goes into each pound and case
+              today, and how much could a conveyor-based sorting and labeling system realistically remove?
+            </p>
+            <div class="portfolio_tags">
+              <span class="portfolio_tag">Time Study</span>
+              <span class="portfolio_tag">Labor-Cost Modeling</span>
+              <span class="portfolio_tag">ROI / NPV</span>
+              <span class="portfolio_tag">Excel</span>
+            </div>
+
+            <button class="portfolio_toggle" type="button" aria-expanded="false">
+              <span class="portfolio_toggle-label">View technical details</span>
+              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
+            </button>
+
+            <div class="portfolio_details">
+              <h4 class="portfolio_details-title">Problem Definition &amp; Scope</h4>
+              <p class="portfolio_details-text">
+                Scoped to the same-day JIT/STD shipping workflow &ndash; the most labor-intensive and the best
+                conveyor fit. The reasoning: a system able to handle that workflow would absorb the remaining
+                make-to-stock volume with room to spare.
+              </p>
+
+              <h4 class="portfolio_details-title">Method</h4>
+              <ul class="portfolio_details-list">
+                <li><strong>Measured, not assumed:</strong> floor time studies gave labor-minutes per case for four
+                  workflow types. Applied to the daily case mix (2,551 cases/day at a 21 lb weighted-average case),
+                  48.0 labor-hr/day &ndash; 30% of all warehouse labor &ndash; was automation-addressable.</li>
+                <li><strong>Netted out what automation won't remove:</strong> a residual manual-workload model
+                  (monitoring, staging, sensor/scale checks, waste removal, maintenance) totaled 25.4 labor-hr/day,
+                  leaving 22.6 hr/day genuinely automatable.</li>
+                <li><strong>Discounted savings to what's capturable:</strong> applied a reduced 15% overhead factor
+                  and modeled capture-rate scenarios by whole-FTE increments.</li>
+              </ul>
+
+              <h4 class="portfolio_details-title">Results</h4>
+              <p class="portfolio_details-text">
+                Against a $3.0M installed cost, ROI ran 5.9% (16.8-yr payback) at current throughput and 9.96%
+                (10.0-yr payback) at +25% throughput. The 15-year NPV stayed negative at an 8% hurdle rate in both
+                cases, which supported a documented "not at this throughput" recommendation.
+              </p>
+              <figure class="portfolio_figure">
+                <img src="./assets/img/projects/automation-roi.png" width="1237" height="323" loading="lazy"
+                  alt="Three bar charts: labor-hours per day by workflow, annual ROI, and payback period at current versus +25% throughput" />
+                <figcaption>Labor-hours/day by workflow (left); annual ROI and payback at current vs. +25% throughput (right).</figcaption>
+              </figure>
+            </div>
+
           </div>
         </div>
+
+        <!-- Project 2: Capacity analysis -->
+        <div class="portfolio_content">
+          <div class="portfolio_data">
+            <h3 class="portfolio_title">Equipment Capacity Analysis</h3>
+            <p class="portfolio_result">
+              Found that changeover frequency, not machine performance, was what held most lines below rated capacity.
+            </p>
+            <p class="portfolio_description">
+              Benchmarked actual throughput against rated design capacity across 11 production lines and 30+ machines.
+            </p>
+            <div class="portfolio_tags">
+              <span class="portfolio_tag">Capacity Utilization</span>
+              <span class="portfolio_tag">Bottleneck Identification</span>
+              <span class="portfolio_tag">Excel</span>
+            </div>
+
+            <button class="portfolio_toggle" type="button" aria-expanded="false">
+              <span class="portfolio_toggle-label">View technical details</span>
+              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
+            </button>
+
+            <div class="portfolio_details">
+              <h4 class="portfolio_details-title">Problem Definition</h4>
+              <p class="portfolio_details-text">
+                How far below rated design capacity do the lines actually run, and what is holding them there?
+              </p>
+
+              <h4 class="portfolio_details-title">Method</h4>
+              <p class="portfolio_details-text">
+                Triangulated three data sources rather than trusting any one: floor time studies, OEM design data
+                books, and operator interviews.
+              </p>
+
+              <h4 class="portfolio_details-title">Finding</h4>
+              <p class="portfolio_details-text">
+                Most lines ran materially below rated capacity. The gap traced back to frequent product changeovers
+                (anywhere from a few hours to every other day). Changeover frequency, not machine performance, was
+                the constraint worth attacking.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 3: Floor rebuild -->
+        <div class="portfolio_content">
+          <div class="portfolio_data">
+            <h3 class="portfolio_title">Production Floor Rebuild &ndash; Phased Equipment Reallocation</h3>
+            <p class="portfolio_result">
+              Sequenced a full floor replacement into five zone-based phases while production kept running.
+            </p>
+            <p class="portfolio_description">
+              Planned the equipment relocation for a full production-floor replacement (the original slab wasn't
+              meat-plant grade) where production could not stop.
+            </p>
+            <div class="portfolio_tags">
+              <span class="portfolio_tag">Layout Planning</span>
+              <span class="portfolio_tag">Production Continuity</span>
+              <span class="portfolio_tag">AutoCAD</span>
+              <span class="portfolio_tag">SolidWorks</span>
+            </div>
+
+            <button class="portfolio_toggle" type="button" aria-expanded="false">
+              <span class="portfolio_toggle-label">View technical details</span>
+              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
+            </button>
+
+            <div class="portfolio_details">
+              <h4 class="portfolio_details-title">Constraints</h4>
+              <ul class="portfolio_details-list">
+                <li>Production could not stop during the rebuild.</li>
+                <li>One machine could not be powered down at any point.</li>
+                <li>One traffic chokepoint had to stay open throughout.</li>
+              </ul>
+
+              <h4 class="portfolio_details-title">Approach</h4>
+              <p class="portfolio_details-text">
+                Split the floor into five zone-based phases. Each phase had to preserve five flows at the same time:
+                worker entry/exit, forklift movement, finished goods out, raw goods in, and maintenance access.
+                Tools: AutoCAD and SolidWorks.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 4: Dairy QA -->
+        <div class="portfolio_content">
+          <div class="portfolio_data">
+            <h3 class="portfolio_title">Dairy QA Knowledge Base Optimization</h3>
+            <p class="portfolio_result">
+              Cut QA document search time from ~30 minutes to ~1 minute with a deployed AI agent.
+            </p>
+            <p class="portfolio_description">
+              Built and deployed an AI agent in Copilot Studio over a structured SharePoint knowledge base, so QA
+              staff could stop hunting for SOPs and regulatory documents scattered across systems.
+            </p>
+            <div class="portfolio_tags">
+              <span class="portfolio_tag">Process Improvement</span>
+              <span class="portfolio_tag">Copilot Studio</span>
+              <span class="portfolio_tag">SharePoint</span>
+              <span class="portfolio_tag">Teams</span>
+            </div>
+
+            <button class="portfolio_toggle" type="button" aria-expanded="false">
+              <span class="portfolio_toggle-label">View technical details</span>
+              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
+            </button>
+
+            <div class="portfolio_details">
+              <h4 class="portfolio_details-title">Problem Definition</h4>
+              <p class="portfolio_details-text">
+                QA staff were losing significant time finding SOPs and regulatory documentation (FDA, USDA, PMO,
+                SQF, HACCP/HARPC) spread across multiple systems.
+              </p>
+
+              <h4 class="portfolio_details-title">Approach</h4>
+              <p class="portfolio_details-text">
+                Built an AI agent in Microsoft Copilot Studio over a structured SharePoint knowledge base of those
+                documents, and deployed it to the QA team.
+              </p>
+
+              <h4 class="portfolio_details-title">Results</h4>
+              <ul class="portfolio_details-list">
+                <li>Document search time dropped from ~30 minutes to ~1 minute.</li>
+                <li>Tested and used by the full QA management and technician group.</li>
+                <li>Returned experienced QA staff to hands-on quality oversight and reduced the risk of acting on
+                  outdated documentation during audits.</li>
+              </ul>
+              <figure class="portfolio_figure portfolio_figure-small">
+                <img src="./assets/img/projects/qa-search-time.png" width="580" height="480" loading="lazy"
+                  alt="Bar chart of QA document search time: 30 minutes before, 1 minute after" />
+                <figcaption>QA document search time, before vs. after the agent.</figcaption>
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== Group 2: ASU ===== -->
+        <div class="portfolio_group">
+          <h3 class="portfolio_group-title">Graduate Research &amp; Coursework</h3>
+          <p class="portfolio_group-meta">Arizona State University &middot; M.S. Mechanical Engineering</p>
+        </div>
+
+        <!-- Project 5: Microwave EM-thermal -->
+        <div class="portfolio_content">
+          <div class="portfolio_data">
+            <h3 class="portfolio_title">Coupled Electromagnetic-Thermal Modeling of Microwave Heating</h3>
+            <p class="portfolio_result">
+              Built a Maxwell + transient heat-transfer model and checked it against hand calculations and an energy/power balance.
+            </p>
+            <p class="portfolio_description">
+              Frequency-domain Maxwell solve coupled to a transient heat-transfer model of a 2.45 GHz cavity with a
+              250 mL water load, in COMSOL Multiphysics.
+            </p>
+            <div class="portfolio_tags">
+              <span class="portfolio_tag">COMSOL</span>
+              <span class="portfolio_tag">Multiphysics</span>
+              <span class="portfolio_tag">Maxwell + Heat Transfer</span>
+              <span class="portfolio_tag">Model Validation</span>
+            </div>
+
+            <button class="portfolio_toggle" type="button" aria-expanded="false">
+              <span class="portfolio_toggle-label">View technical details</span>
+              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
+            </button>
+
+            <div class="portfolio_details">
+              <h4 class="portfolio_details-title">Governing Equations &amp; Assumptions</h4>
+              <p class="portfolio_details-text">
+                Maxwell's equations are solved in the frequency domain. The two timescales (GHz field, seconds of
+                heating) are bridged by using the cycle-averaged resistive loss as the heat source in the transient
+                heat-transfer model.
+              </p>
+              <p class="portfolio_eq">
+                Q = &frac12; Re(J &middot; E*) &nbsp;&rarr;&nbsp; &rho;Cp &part;T/&part;t = &nabla;&middot;(k&nabla;T) + Q
+              </p>
+              <p class="portfolio_details-text">
+                Water's temperature-dependent permittivity is captured with a Debye relaxation model, which
+                reproduces the self-stabilizing feedback: absorption falls as the load heats.
+              </p>
+
+              <h4 class="portfolio_details-title">Validation</h4>
+              <p class="portfolio_details-text">
+                Validated before trusting it: hand-calculated the penetration depth and the expected temperature
+                rise, then checked the solved model against those figures and against an energy/power balance.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 6: DOE -->
+        <div class="portfolio_content">
+          <div class="portfolio_data">
+            <h3 class="portfolio_title">Design of Experiments &ndash; Factorial Study of Cooling Performance</h3>
+            <p class="portfolio_result">
+              Ice quantity drove ~95% of cooling-rate variability (model R&sup2; = 0.97); turned the fitted models into operating recommendations.
+            </p>
+            <p class="portfolio_description">
+              Full 2&sup3; factorial experiment (8 combinations &times; 2 replicates = 16 randomized runs) on how ice
+              geometry, ice mass, and carbonation drive cooling rate and temperature retention. IEE 572.
+            </p>
+            <div class="portfolio_tags">
+              <span class="portfolio_tag">Design of Experiments</span>
+              <span class="portfolio_tag">ANOVA</span>
+              <span class="portfolio_tag">Regression Modeling</span>
+              <span class="portfolio_tag">JMP</span>
+            </div>
+
+            <button class="portfolio_toggle" type="button" aria-expanded="false">
+              <span class="portfolio_toggle-label">View technical details</span>
+              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
+            </button>
+
+            <div class="portfolio_details">
+              <h4 class="portfolio_details-title">My Contribution</h4>
+              <p class="portfolio_details-text">
+                Designed the experiment, ran all 16 trials, and did the full statistical analysis and write-up.
+              </p>
+
+              <h4 class="portfolio_details-title">Analysis</h4>
+              <p class="portfolio_details-text">
+                Half-normal plots, ANOVA, regression modeling, residual diagnostics, and response-surface plots in JMP.
+              </p>
+
+              <h4 class="portfolio_details-title">Results</h4>
+              <ul class="portfolio_details-list">
+                <li><strong>Cooling rate:</strong> ice quantity dominated (~95% of variability, p &lt; .0001). Ice shape
+                  was smaller but real (~3%, p = .0212). Carbonation was not significant. Model R&sup2; = 0.97.</li>
+                <li><strong>Retention time:</strong> ice quantity again dominant (~77%, p &lt; .0001). Ice shape and the
+                  carbonation &times; shape interaction were each ~9% and significant. Model R&sup2; = 0.94.</li>
+                <li><strong>Closed the loop:</strong> reduced the fitted models to operating recommendations rather than
+                  stopping at the statistics.</li>
+              </ul>
+              <figure class="portfolio_figure portfolio_figure-small">
+                <img src="./assets/img/projects/doe-response-surface.png" width="470" height="467" loading="lazy"
+                  alt="JMP response surface plot of retention time versus ice quantity and ice shape" />
+                <figcaption>Response surface: retention time (1&deg;C rise) vs. ice quantity and ice shape (JMP).</figcaption>
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 7: AM thermal -->
+        <div class="portfolio_content">
+          <div class="portfolio_data">
+            <h3 class="portfolio_title">Thermal Simulation of Additive Manufacturing Processes</h3>
+            <p class="portfolio_result">
+              Showed that heat accumulation from a revisited track, not higher input power, pushed the melt pool ~475 K above liquidus.
+            </p>
+            <p class="portfolio_description">
+              Two FEA studies (Jan &ndash; Apr 2025): layer-by-layer heat buildup in FDM printing (ANSYS), and a
+              moving laser source on a Ti-6Al-4V powder bed (COMSOL).
+            </p>
+            <div class="portfolio_tags">
+              <span class="portfolio_tag">ANSYS</span>
+              <span class="portfolio_tag">COMSOL</span>
+              <span class="portfolio_tag">Transient Thermal FEA</span>
+              <span class="portfolio_tag">Additive Manufacturing</span>
+            </div>
+
+            <button class="portfolio_toggle" type="button" aria-expanded="false">
+              <span class="portfolio_toggle-label">View technical details</span>
+              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
+            </button>
+
+            <div class="portfolio_details">
+              <h4 class="portfolio_details-title">FDM (ANSYS)</h4>
+              <p class="portfolio_details-text">
+                Modeled layer-by-layer heat buildup with the element activation method and compared ABS to PA12.
+                ABS retained more heat and had a larger heat-affected zone. PA12 cooled faster and had better
+                thermal stability.
+              </p>
+
+              <h4 class="portfolio_details-title">Laser Powder Bed (COMSOL)</h4>
+              <p class="portfolio_details-text">
+                Moving Gaussian heat source over a 0.4 mm Ti-6Al-4V powder layer at 30 W absorbed power and
+                800 mm/s, with conduction, convection, and radiation boundary conditions and localized 40 &micro;m
+                mesh refinement.
+              </p>
+
+              <h4 class="portfolio_details-title">Scan-Strategy Result</h4>
+              <p class="portfolio_details-text">
+                A linear pass peaked at ~2264 K. A full circular lap reached ~2405 K, about 475 K above liquidus.
+                The difference came from heat accumulating along a revisited track, not from higher input power.
+              </p>
+              <figure class="portfolio_figure portfolio_figure-small">
+                <img src="./assets/img/projects/lpbf-melt-pool.png" width="620" height="480" loading="lazy"
+                  alt="Bar chart of peak melt-pool temperature: 2264 K for a linear scan and 2405 K for a circular lap, against a liquidus line near 1930 K" />
+                <figcaption>Peak melt-pool temperature by scan strategy, against the ~1930 K liquidus.</figcaption>
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="portfolio_cta">
+        <a href="./Utsav_Joshi_Project_Portfolio.pdf" download class="button button--flex" target="_blank" rel="noopener noreferrer">
+          Download full project portfolio (PDF)
+          <i class="uil uil-file-download-alt button_icon"></i>
+        </a>
       </div>
     </section>
 
@@ -657,408 +704,26 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="portfolio section" id="projects">
-      <h2 class="section_title">Projects</h2>
-      <span class="section_subtitle">Selected Work</span>
-
-      <div class="portfolio_container container">
-
-        <!-- ===== Group 1: Shamrock Foods ===== -->
-        <div class="portfolio_group">
-          <h3 class="portfolio_group-title">Manufacturing Engineering Internship</h3>
-          <p class="portfolio_group-meta">
-            Shamrock Foods Company &middot; Gold Canyon Meat Co. &middot; May &ndash; July 2026 &middot;
-            ~450,000 sq ft meat-processing plant, 11 production lines
+    <!-- About -->
+    <section class="about section" id="about">
+      <h2 class="section_title">About Me</h2>
+      <span class="section_subtitle">My introduction</span>
+      <div class="about_container container grid">
+        <img src="./assets/img/about.jpg" alt="Utsav Amrish Joshi" class="about_img" data-tilt />
+        <div class="about_data">
+          <p class="about_description">
+            Hey there! 👋 I'm Utsav, a Mechanical Engineer with an M.S. from Arizona State University (GPA 3.43).
+            I have hands-on experience in manufacturing process improvement, quality inspection, P&amp;ID development,
+            and CAD design. My internship at Shamrock Foods gave me real shop-floor exposure, and my research at ASU
+            involved multiphysics simulation for semiconductor processing. I'm currently looking for full-time roles
+            in manufacturing, quality, or mechanical design engineering.
           </p>
-        </div>
-
-        <!-- Project 1: Automation ROI -->
-        <div class="portfolio_content">
-          <div class="portfolio_data">
-            <h3 class="portfolio_title">Automated Sorting &amp; Labeling System &ndash; Time Study and Automation ROI</h3>
-            <p class="portfolio_result">
-              Time-studied 48.0 labor-hr/day of automatable work and showed a $3.0M sorting system doesn't pay back at current throughput.
-            </p>
-            <p class="portfolio_description">
-              Answered one question for plant leadership: how much warehouse labor goes into each pound and case
-              today, and how much could a conveyor-based sorting and labeling system realistically remove?
-            </p>
-            <div class="portfolio_tags">
-              <span class="portfolio_tag">Time Study</span>
-              <span class="portfolio_tag">Labor-Cost Modeling</span>
-              <span class="portfolio_tag">ROI / NPV</span>
-              <span class="portfolio_tag">Excel</span>
-            </div>
-
-            <button class="portfolio_toggle" type="button" aria-expanded="false">
-              <span class="portfolio_toggle-label">View technical details</span>
-              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
-            </button>
-
-            <div class="portfolio_details">
-              <h4 class="portfolio_details-title">Problem Definition &amp; Scope</h4>
-              <p class="portfolio_details-text">
-                Scoped to the same-day JIT/STD shipping workflow &ndash; the most labor-intensive and the best
-                conveyor fit. The reasoning: a system able to handle that workflow would absorb the remaining
-                make-to-stock volume with room to spare.
-              </p>
-
-              <h4 class="portfolio_details-title">Method</h4>
-              <ul class="portfolio_details-list">
-                <li><strong>Measured, not assumed:</strong> floor time studies gave labor-minutes per case for four
-                  workflow types. Applied to the daily case mix (2,551 cases/day at a 21 lb weighted-average case),
-                  48.0 labor-hr/day &ndash; 30% of all warehouse labor &ndash; was automation-addressable.</li>
-                <li><strong>Netted out what automation won't remove:</strong> a residual manual-workload model
-                  (monitoring, staging, sensor/scale checks, waste removal, maintenance) totaled 25.4 labor-hr/day,
-                  leaving 22.6 hr/day genuinely automatable.</li>
-                <li><strong>Discounted savings to what's capturable:</strong> applied a reduced 15% overhead factor
-                  and modeled capture-rate scenarios by whole-FTE increments.</li>
-              </ul>
-
-              <h4 class="portfolio_details-title">Results</h4>
-              <p class="portfolio_details-text">
-                Against a $3.0M installed cost, ROI ran 5.9% (16.8-yr payback) at current throughput and 9.96%
-                (10.0-yr payback) at +25% throughput. The 15-year NPV stayed negative at an 8% hurdle rate in both
-                cases, which supported a documented "not at this throughput" recommendation.
-              </p>
-              <figure class="portfolio_figure">
-                <img src="./assets/img/projects/automation-roi.png" width="1237" height="323" loading="lazy"
-                  alt="Three bar charts: labor-hours per day by workflow, annual ROI, and payback period at current versus +25% throughput" />
-                <figcaption>Labor-hours/day by workflow (left); annual ROI and payback at current vs. +25% throughput (right).</figcaption>
-              </figure>
-            </div>
-
-            <a href="https://www.linkedin.com/in/utsav-joshi/" class="button button-flex button-small portfolio_button" target="_blank" rel="noopener noreferrer">
-              View on LinkedIn
-              <i class="uil uil-arrow-right button_icon"></i>
+          <div class="about_button">
+            <a download="" href="./Utsav_Joshi_Resume_v4.pdf" class="button button--flex" target="_blank">
+              Resume <i class="uil uil-file-download-alt button_icon"></i>
             </a>
           </div>
         </div>
-
-        <!-- Project 2: Capacity analysis -->
-        <div class="portfolio_content">
-          <div class="portfolio_data">
-            <h3 class="portfolio_title">Equipment Capacity Analysis</h3>
-            <p class="portfolio_result">
-              Found that changeover frequency, not machine performance, was what held most lines below rated capacity.
-            </p>
-            <p class="portfolio_description">
-              Benchmarked actual throughput against rated design capacity across 11 production lines and 30+ machines.
-            </p>
-            <div class="portfolio_tags">
-              <span class="portfolio_tag">Capacity Utilization</span>
-              <span class="portfolio_tag">Bottleneck Identification</span>
-              <span class="portfolio_tag">Excel</span>
-            </div>
-
-            <button class="portfolio_toggle" type="button" aria-expanded="false">
-              <span class="portfolio_toggle-label">View technical details</span>
-              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
-            </button>
-
-            <div class="portfolio_details">
-              <h4 class="portfolio_details-title">Problem Definition</h4>
-              <p class="portfolio_details-text">
-                How far below rated design capacity do the lines actually run, and what is holding them there?
-              </p>
-
-              <h4 class="portfolio_details-title">Method</h4>
-              <p class="portfolio_details-text">
-                Triangulated three data sources rather than trusting any one: floor time studies, OEM design data
-                books, and operator interviews.
-              </p>
-
-              <h4 class="portfolio_details-title">Finding</h4>
-              <p class="portfolio_details-text">
-                Most lines ran materially below rated capacity. The gap traced back to frequent product changeovers
-                (anywhere from a few hours to every other day). Changeover frequency, not machine performance, was
-                the constraint worth attacking.
-              </p>
-            </div>
-
-            <a href="https://www.linkedin.com/in/utsav-joshi/" class="button button-flex button-small portfolio_button" target="_blank" rel="noopener noreferrer">
-              View on LinkedIn
-              <i class="uil uil-arrow-right button_icon"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3: Floor rebuild -->
-        <div class="portfolio_content">
-          <div class="portfolio_data">
-            <h3 class="portfolio_title">Production Floor Rebuild &ndash; Phased Equipment Reallocation</h3>
-            <p class="portfolio_result">
-              Sequenced a full floor replacement into five zone-based phases while production kept running.
-            </p>
-            <p class="portfolio_description">
-              Planned the equipment relocation for a full production-floor replacement (the original slab wasn't
-              meat-plant grade) where production could not stop.
-            </p>
-            <div class="portfolio_tags">
-              <span class="portfolio_tag">Layout Planning</span>
-              <span class="portfolio_tag">Production Continuity</span>
-              <span class="portfolio_tag">AutoCAD</span>
-              <span class="portfolio_tag">SolidWorks</span>
-            </div>
-
-            <button class="portfolio_toggle" type="button" aria-expanded="false">
-              <span class="portfolio_toggle-label">View technical details</span>
-              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
-            </button>
-
-            <div class="portfolio_details">
-              <h4 class="portfolio_details-title">Constraints</h4>
-              <ul class="portfolio_details-list">
-                <li>Production could not stop during the rebuild.</li>
-                <li>One machine could not be powered down at any point.</li>
-                <li>One traffic chokepoint had to stay open throughout.</li>
-              </ul>
-
-              <h4 class="portfolio_details-title">Approach</h4>
-              <p class="portfolio_details-text">
-                Split the floor into five zone-based phases. Each phase had to preserve five flows at the same time:
-                worker entry/exit, forklift movement, finished goods out, raw goods in, and maintenance access.
-                Tools: AutoCAD and SolidWorks.
-              </p>
-            </div>
-
-            <a href="https://www.linkedin.com/in/utsav-joshi/" class="button button-flex button-small portfolio_button" target="_blank" rel="noopener noreferrer">
-              View on LinkedIn
-              <i class="uil uil-arrow-right button_icon"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 4: Dairy QA -->
-        <div class="portfolio_content">
-          <div class="portfolio_data">
-            <h3 class="portfolio_title">Dairy QA Knowledge Base Optimization</h3>
-            <p class="portfolio_result">
-              Cut QA document search time from ~30 minutes to ~1 minute with a deployed AI agent.
-            </p>
-            <p class="portfolio_description">
-              Built and deployed an AI agent in Copilot Studio over a structured SharePoint knowledge base, so QA
-              staff could stop hunting for SOPs and regulatory documents scattered across systems.
-            </p>
-            <div class="portfolio_tags">
-              <span class="portfolio_tag">Process Improvement</span>
-              <span class="portfolio_tag">Copilot Studio</span>
-              <span class="portfolio_tag">SharePoint</span>
-              <span class="portfolio_tag">Teams</span>
-            </div>
-
-            <button class="portfolio_toggle" type="button" aria-expanded="false">
-              <span class="portfolio_toggle-label">View technical details</span>
-              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
-            </button>
-
-            <div class="portfolio_details">
-              <h4 class="portfolio_details-title">Problem Definition</h4>
-              <p class="portfolio_details-text">
-                QA staff were losing significant time finding SOPs and regulatory documentation (FDA, USDA, PMO,
-                SQF, HACCP/HARPC) spread across multiple systems.
-              </p>
-
-              <h4 class="portfolio_details-title">Approach</h4>
-              <p class="portfolio_details-text">
-                Built an AI agent in Microsoft Copilot Studio over a structured SharePoint knowledge base of those
-                documents, and deployed it to the QA team.
-              </p>
-
-              <h4 class="portfolio_details-title">Results</h4>
-              <ul class="portfolio_details-list">
-                <li>Document search time dropped from ~30 minutes to ~1 minute.</li>
-                <li>Tested and used by the full QA management and technician group.</li>
-                <li>Returned experienced QA staff to hands-on quality oversight and reduced the risk of acting on
-                  outdated documentation during audits.</li>
-              </ul>
-              <figure class="portfolio_figure portfolio_figure-small">
-                <img src="./assets/img/projects/qa-search-time.png" width="580" height="480" loading="lazy"
-                  alt="Bar chart of QA document search time: 30 minutes before, 1 minute after" />
-                <figcaption>QA document search time, before vs. after the agent.</figcaption>
-              </figure>
-            </div>
-
-            <a href="https://www.linkedin.com/in/utsav-joshi/" class="button button-flex button-small portfolio_button" target="_blank" rel="noopener noreferrer">
-              View on LinkedIn
-              <i class="uil uil-arrow-right button_icon"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- ===== Group 2: ASU ===== -->
-        <div class="portfolio_group">
-          <h3 class="portfolio_group-title">Graduate Research &amp; Coursework</h3>
-          <p class="portfolio_group-meta">Arizona State University &middot; M.S. Mechanical Engineering</p>
-        </div>
-
-        <!-- Project 5: Microwave EM-thermal -->
-        <div class="portfolio_content">
-          <div class="portfolio_data">
-            <h3 class="portfolio_title">Coupled Electromagnetic-Thermal Modeling of Microwave Heating</h3>
-            <p class="portfolio_result">
-              Built a Maxwell + transient heat-transfer model and checked it against hand calculations and an energy/power balance.
-            </p>
-            <p class="portfolio_description">
-              Frequency-domain Maxwell solve coupled to a transient heat-transfer model of a 2.45 GHz cavity with a
-              250 mL water load, in COMSOL Multiphysics.
-            </p>
-            <div class="portfolio_tags">
-              <span class="portfolio_tag">COMSOL</span>
-              <span class="portfolio_tag">Multiphysics</span>
-              <span class="portfolio_tag">Maxwell + Heat Transfer</span>
-              <span class="portfolio_tag">Model Validation</span>
-            </div>
-
-            <button class="portfolio_toggle" type="button" aria-expanded="false">
-              <span class="portfolio_toggle-label">View technical details</span>
-              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
-            </button>
-
-            <div class="portfolio_details">
-              <h4 class="portfolio_details-title">Governing Equations &amp; Assumptions</h4>
-              <p class="portfolio_details-text">
-                Maxwell's equations are solved in the frequency domain. The two timescales (GHz field, seconds of
-                heating) are bridged by using the cycle-averaged resistive loss as the heat source in the transient
-                heat-transfer model.
-              </p>
-              <p class="portfolio_eq">
-                Q = &frac12; Re(J &middot; E*) &nbsp;&rarr;&nbsp; &rho;Cp &part;T/&part;t = &nabla;&middot;(k&nabla;T) + Q
-              </p>
-              <p class="portfolio_details-text">
-                Water's temperature-dependent permittivity is captured with a Debye relaxation model, which
-                reproduces the self-stabilizing feedback: absorption falls as the load heats.
-              </p>
-
-              <h4 class="portfolio_details-title">Validation</h4>
-              <p class="portfolio_details-text">
-                Validated before trusting it: hand-calculated the penetration depth and the expected temperature
-                rise, then checked the solved model against those figures and against an energy/power balance.
-              </p>
-            </div>
-
-            <a href="https://www.linkedin.com/in/utsav-joshi/" class="button button-flex button-small portfolio_button" target="_blank" rel="noopener noreferrer">
-              View on LinkedIn
-              <i class="uil uil-arrow-right button_icon"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 6: DOE -->
-        <div class="portfolio_content">
-          <div class="portfolio_data">
-            <h3 class="portfolio_title">Design of Experiments &ndash; Factorial Study of Cooling Performance</h3>
-            <p class="portfolio_result">
-              Ice quantity drove ~95% of cooling-rate variability (model R&sup2; = 0.97); turned the fitted models into operating recommendations.
-            </p>
-            <p class="portfolio_description">
-              Full 2&sup3; factorial experiment (8 combinations &times; 2 replicates = 16 randomized runs) on how ice
-              geometry, ice mass, and carbonation drive cooling rate and temperature retention. IEE 572.
-            </p>
-            <div class="portfolio_tags">
-              <span class="portfolio_tag">Design of Experiments</span>
-              <span class="portfolio_tag">ANOVA</span>
-              <span class="portfolio_tag">Regression Modeling</span>
-              <span class="portfolio_tag">JMP</span>
-            </div>
-
-            <button class="portfolio_toggle" type="button" aria-expanded="false">
-              <span class="portfolio_toggle-label">View technical details</span>
-              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
-            </button>
-
-            <div class="portfolio_details">
-              <h4 class="portfolio_details-title">My Contribution</h4>
-              <p class="portfolio_details-text">
-                Designed the experiment, ran all 16 trials, and did the full statistical analysis and write-up.
-              </p>
-
-              <h4 class="portfolio_details-title">Analysis</h4>
-              <p class="portfolio_details-text">
-                Half-normal plots, ANOVA, regression modeling, residual diagnostics, and response-surface plots in JMP.
-              </p>
-
-              <h4 class="portfolio_details-title">Results</h4>
-              <ul class="portfolio_details-list">
-                <li><strong>Cooling rate:</strong> ice quantity dominated (~95% of variability, p &lt; .0001). Ice shape
-                  was smaller but real (~3%, p = .0212). Carbonation was not significant. Model R&sup2; = 0.97.</li>
-                <li><strong>Retention time:</strong> ice quantity again dominant (~77%, p &lt; .0001). Ice shape and the
-                  carbonation &times; shape interaction were each ~9% and significant. Model R&sup2; = 0.94.</li>
-                <li><strong>Closed the loop:</strong> reduced the fitted models to operating recommendations rather than
-                  stopping at the statistics.</li>
-              </ul>
-              <figure class="portfolio_figure portfolio_figure-small">
-                <img src="./assets/img/projects/doe-response-surface.png" width="470" height="467" loading="lazy"
-                  alt="JMP response surface plot of retention time versus ice quantity and ice shape" />
-                <figcaption>Response surface: retention time (1&deg;C rise) vs. ice quantity and ice shape (JMP).</figcaption>
-              </figure>
-            </div>
-
-            <a href="https://www.linkedin.com/in/utsav-joshi/" class="button button-flex button-small portfolio_button" target="_blank" rel="noopener noreferrer">
-              View on LinkedIn
-              <i class="uil uil-arrow-right button_icon"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 7: AM thermal -->
-        <div class="portfolio_content">
-          <div class="portfolio_data">
-            <h3 class="portfolio_title">Thermal Simulation of Additive Manufacturing Processes</h3>
-            <p class="portfolio_result">
-              Showed that heat accumulation from a revisited track, not higher input power, pushed the melt pool ~475 K above liquidus.
-            </p>
-            <p class="portfolio_description">
-              Two FEA studies (Jan &ndash; Apr 2025): layer-by-layer heat buildup in FDM printing (ANSYS), and a
-              moving laser source on a Ti-6Al-4V powder bed (COMSOL).
-            </p>
-            <div class="portfolio_tags">
-              <span class="portfolio_tag">ANSYS</span>
-              <span class="portfolio_tag">COMSOL</span>
-              <span class="portfolio_tag">Transient Thermal FEA</span>
-              <span class="portfolio_tag">Additive Manufacturing</span>
-            </div>
-
-            <button class="portfolio_toggle" type="button" aria-expanded="false">
-              <span class="portfolio_toggle-label">View technical details</span>
-              <i class="uil uil-angle-down portfolio_toggle-icon"></i>
-            </button>
-
-            <div class="portfolio_details">
-              <h4 class="portfolio_details-title">FDM (ANSYS)</h4>
-              <p class="portfolio_details-text">
-                Modeled layer-by-layer heat buildup with the element activation method and compared ABS to PA12.
-                ABS retained more heat and had a larger heat-affected zone. PA12 cooled faster and had better
-                thermal stability.
-              </p>
-
-              <h4 class="portfolio_details-title">Laser Powder Bed (COMSOL)</h4>
-              <p class="portfolio_details-text">
-                Moving Gaussian heat source over a 0.4 mm Ti-6Al-4V powder layer at 30 W absorbed power and
-                800 mm/s, with conduction, convection, and radiation boundary conditions and localized 40 &micro;m
-                mesh refinement.
-              </p>
-
-              <h4 class="portfolio_details-title">Scan-Strategy Result</h4>
-              <p class="portfolio_details-text">
-                A linear pass peaked at ~2264 K. A full circular lap reached ~2405 K, about 475 K above liquidus.
-                The difference came from heat accumulating along a revisited track, not from higher input power.
-              </p>
-              <figure class="portfolio_figure portfolio_figure-small">
-                <img src="./assets/img/projects/lpbf-melt-pool.png" width="620" height="480" loading="lazy"
-                  alt="Bar chart of peak melt-pool temperature: 2264 K for a linear scan and 2405 K for a circular lap, against a liquidus line near 1930 K" />
-                <figcaption>Peak melt-pool temperature by scan strategy, against the ~1930 K liquidus.</figcaption>
-              </figure>
-            </div>
-
-            <a href="https://www.linkedin.com/in/utsav-joshi/" class="button button-flex button-small portfolio_button" target="_blank" rel="noopener noreferrer">
-              View on LinkedIn
-              <i class="uil uil-arrow-right button_icon"></i>
-            </a>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -1151,8 +816,8 @@
         </div>
 
         <ul class="footer_links">
-          <li><a href="#about" class="footer_link">About</a></li>
           <li><a href="#projects" class="footer_link">Projects</a></li>
+          <li><a href="#about" class="footer_link">About</a></li>
           <li><a href="#contact" class="footer_link">Contact Me</a></li>
         </ul>
 
