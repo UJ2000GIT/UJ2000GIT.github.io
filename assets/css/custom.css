@@ -87,13 +87,17 @@
   max-height: 0;
   overflow: hidden;
   text-align: left;
-  transition: max-height 0.4s ease;
+  /* Closed panels are hidden from screen readers once the collapse animation ends */
+  visibility: hidden;
+  transition: max-height 0.4s ease, visibility 0s linear 0.4s;
 }
 
 /* JS sets an exact max-height on open; this is only the no-JS-measure fallback */
 .portfolio_details.is-open {
   max-height: 4000px;
   padding-bottom: var(--mb-1);
+  visibility: visible;
+  transition: max-height 0.4s ease, visibility 0s;
 }
 
 .portfolio_details-title {
