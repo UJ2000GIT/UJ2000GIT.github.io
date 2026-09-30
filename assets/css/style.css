@@ -407,16 +407,6 @@ button {
   justify-content: center;
 }
 
-/* SKILLS  */
-.single_skill_icon {
-  color: var(--first-color);
-  font-size: var(--h1-font-size);
-}
-
-.external-logo {
-  width: var(--h1-font-size);
-}
-
 /* QUALIFICATION */
 .qualification_tabs {
   display: flex;
