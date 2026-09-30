@@ -82,3 +82,47 @@ themeButton.addEventListener("click", () => {
     }
   });
 });
+
+
+// ICON FONT CHECK
+// Every icon is a glyph from the unicons stylesheet on a third-party CDN. If it
+// fails in any way, the icon elements collapse to nothing and the theme toggle
+// and mobile menu button become impossible to tap. The stylesheet's onerror
+// only catches a hard network failure; a firewall that answers with an HTML
+// "blocked" page, or a font file that never arrives, gets through it. So check
+// the outcome instead: does an icon actually render, and did the font load?
+// Turns text labels on via .no-icons (see custom.css) and off again if the
+// font turns up late.
+(function () {
+  const probe = document.createElement("i");
+  probe.className = "uil uil-moon";
+  probe.setAttribute("aria-hidden", "true");
+  probe.style.cssText = "position:absolute;left:-9999px;visibility:hidden";
+  document.body.appendChild(probe);
+
+  function iconsFailed(stalled) {
+    // No glyph at all: the stylesheet never applied (blocked, or a block page).
+    if (probe.offsetWidth === 0) return true;
+    const faces = Array.from(document.fonts || []).filter((f) =>
+      /unicons/i.test(f.family)
+    );
+    if (faces.some((f) => f.status === "loaded")) return false;
+    // The stylesheet applied but the font file itself failed.
+    if (faces.some((f) => f.status === "error")) return true;
+    // Still downloading after a few seconds: show labels until it arrives.
+    if (stalled && faces.some((f) => f.status === "loading")) return true;
+    return false;
+  }
+
+  function update(stalled) {
+    document.documentElement.classList.toggle("no-icons", iconsFailed(stalled));
+  }
+
+  window.addEventListener("load", () => update(false));
+  if (document.fonts) {
+    document.fonts.ready.then(() => update(false));
+    document.fonts.addEventListener("loadingdone", () => update(false));
+    document.fonts.addEventListener("loadingerror", () => update(false));
+  }
+  setTimeout(() => update(true), 4000);
+})();

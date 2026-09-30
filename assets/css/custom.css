@@ -476,15 +476,16 @@ body.dark-theme textarea:focus-visible {
 /* ---- Fallback when the icon font fails to load ----
    Every icon is a glyph from the unicons CDN. If that request fails the icon
    elements collapse to zero width, which makes the theme toggle and the mobile
-   menu button impossible to tap. The onerror handler on the stylesheet sets
-   .no-icons, and these rules put readable text back in their place. */
+   menu button impossible to tap. .no-icons is set by the stylesheet's onerror
+   (hard network failure) and by the ICON FONT CHECK in main.js (block pages,
+   font file failures); these rules put readable text back in their place. */
 .no-icons #theme-button::before,
 .no-icons #nav-toggle::before,
 .no-icons #nav-close::before,
 .no-icons .scrollup::before,
 .no-icons .footer_social::before,
 .no-icons .home_social-icon::before {
-  font-family: var(--body-font);
+  font-family: var(--body-font) !important;
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
   font-style: normal;
