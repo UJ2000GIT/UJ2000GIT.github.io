@@ -3,7 +3,8 @@
 Personal portfolio site: mechanical / manufacturing engineering projects, skills, and qualifications.
 
 - **Live site:** https://utsavaj.github.io
-- **Stack:** static HTML, CSS, and vanilla JavaScript (no build step), hosted on GitHub Pages
+- **Stack:** static HTML, CSS, and JavaScript (no build step), hosted on GitHub Pages
+- **Libraries:** jQuery and tilt.js (hero and photo tilt), typed.js (hero typing effect); Poppins via Google Fonts and Unicons via CDN
 - **Contact form:** [Formspree](https://formspree.io)
 
 ## Structure
