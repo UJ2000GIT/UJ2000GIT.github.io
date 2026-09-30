@@ -17,12 +17,6 @@
   will-change: transform;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .home_img {
-    animation: none;
-  }
-}
-
 /* Projects: stacked technical case-study cards (replaces the swiper carousel) */
 .portfolio_container {
   display: flex;
