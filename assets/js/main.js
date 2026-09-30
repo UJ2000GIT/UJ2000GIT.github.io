@@ -115,6 +115,16 @@ let workheader = document.getElementById("workheader");
 workheader.style.color = "var(--text-color)";
 educationheader.style.color = "var(--first-color)";
 
+// Keep the ARIA state in step with what is on screen. Only the selected tab is
+// in the Tab order; the arrow keys move between tabs (WAI-ARIA tabs pattern).
+function markSelectedTab(selected) {
+  [educationheader, workheader].forEach((tab) => {
+    const isSelected = tab === selected;
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+  });
+}
+
 educationheader.addEventListener("click", () => {
   let condition1 = work.classList.contains("qualification-inactive");
   if (!condition1) {
@@ -122,6 +132,7 @@ educationheader.addEventListener("click", () => {
     work.classList.add("qualification-inactive");
     workheader.style.color = "var(--text-color)";
     educationheader.style.color = "var(--first-color)";
+    markSelectedTab(educationheader);
   }
 });
 workheader.addEventListener("click", () => {
@@ -131,7 +142,31 @@ workheader.addEventListener("click", () => {
     education.classList.add("qualification-inactive");
     educationheader.style.color = "var(--text-color)";
     workheader.style.color = "var(--first-color)";
+    markSelectedTab(workheader);
   }
+});
+
+// The tabs are <div>s, so a browser will not activate them on a key press the
+// way it does a <button>. Enter/Space select the focused tab; the arrow keys
+// and Home/End move to the other one.
+[educationheader, workheader].forEach((tab) => {
+  tab.addEventListener("keydown", (event) => {
+    const other = tab === educationheader ? workheader : educationheader;
+    let target = null;
+    if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      target = tab;
+    } else if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+      target = other;
+    } else if (event.key === "Home") {
+      target = educationheader;
+    } else if (event.key === "End") {
+      target = workheader;
+    }
+    if (!target) return;
+    event.preventDefault();
+    target.focus();
+    target.click();
+  });
 });
 
 // PROJECTS: technical-details expand/collapse
@@ -218,9 +253,28 @@ const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "uil-sun";
 
+// Browsers set to block site data, and some locked-down profiles, throw on any
+// localStorage access. An unguarded call here stops the whole script, which
+// took the theme toggle, the typing animation and the keyboard handlers down
+// with it. The theme still toggles for the visit; it just is not remembered.
+function readStored(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (e) {
+    return null;
+  }
+}
+function writeStored(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    // storage unavailable: the choice applies to this visit only
+  }
+}
+
 // Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
+const selectedTheme = readStored("selected-theme");
+const selectedIcon = readStored("selected-icon");
 
 // obtain the current theme
 const getCurrentTheme = () =>
@@ -243,8 +297,8 @@ themeButton.addEventListener("click", () => {
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
   // We save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
+  writeStored("selected-theme", getCurrentTheme());
+  writeStored("selected-icon", getCurrentIcon());
 });
 
 // Typing Animation using Typed JS

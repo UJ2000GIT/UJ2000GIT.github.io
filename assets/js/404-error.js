@@ -41,9 +41,28 @@ const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "uil-sun";
 
+// Browsers set to block site data, and some locked-down profiles, throw on any
+// localStorage access. An unguarded call here stops the whole script, which
+// took the theme toggle, the typing animation and the keyboard handlers down
+// with it. The theme still toggles for the visit; it just is not remembered.
+function readStored(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (e) {
+    return null;
+  }
+}
+function writeStored(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    // storage unavailable: the choice applies to this visit only
+  }
+}
+
 // Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
+const selectedTheme = readStored("selected-theme");
+const selectedIcon = readStored("selected-icon");
 
 // obtain the current theme
 const getCurrentTheme = () =>
@@ -66,8 +85,8 @@ themeButton.addEventListener("click", () => {
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
   // We save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
+  writeStored("selected-theme", getCurrentTheme());
+  writeStored("selected-icon", getCurrentIcon());
 });
 
 // KEYBOARD ACCESS FOR ICON CONTROLS

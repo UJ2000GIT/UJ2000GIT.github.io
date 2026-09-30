@@ -636,18 +636,21 @@
       <span class="section_subtitle">My Educational Qualification &amp; Work Experience</span>
 
       <div class="qualification_container container">
-        <div class="qualification_tabs">
-          <div class="qualification_button button-flex" id="educationheader">
-            <i class="uil uil-graduation-cap qualification_icon"></i>Education
+        <div class="qualification_tabs" role="tablist" aria-label="Qualifications">
+          <div class="qualification_button button-flex" id="educationheader" role="tab" tabindex="0"
+            aria-selected="true" aria-controls="education">
+            <i class="uil uil-graduation-cap qualification_icon" aria-hidden="true"></i>Education
           </div>
-          <div class="qualification_button button-flex" id="workheader">
-            <i class="uil uil-briefcase-alt qualification_icon"></i>Work
+          <div class="qualification_button button-flex" id="workheader" role="tab" tabindex="-1"
+            aria-selected="false" aria-controls="work">
+            <i class="uil uil-briefcase-alt qualification_icon" aria-hidden="true"></i>Work
           </div>
         </div>
 
         <div class="qualification_sections">
           <!-- Education -->
-          <div class="qualification_content qualification_active" data-content id="education">
+          <div class="qualification_content qualification_active" data-content id="education" role="tabpanel"
+            aria-labelledby="educationheader">
 
             <div class="qualification_data">
               <div>
@@ -709,7 +712,7 @@
           </div>
 
           <!-- Work -->
-          <div class="qualification_content qualification-inactive" data-content id="work">
+          <div class="qualification_content qualification-inactive" data-content id="work" role="tabpanel" aria-labelledby="workheader">
 
             <div class="qualification_data">
               <div>
@@ -874,7 +877,7 @@
           </div>
           <div class="contact_content">
             <label for="message" class="contact_label">Message</label>
-            <textarea name="message" cols="0" rows="7" class="contact_input message" id="message"
+            <textarea name="message" rows="7" class="contact_input message" id="message"
               style="resize: vertical;" required></textarea>
           </div>
           <div>
