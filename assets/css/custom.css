@@ -456,3 +456,14 @@ body.dark-theme textarea:focus-visible {
     margin-bottom: 0;
   }
 }
+
+/* Scroll Down: centered under the hero instead of pushed left by the template's margin.
+   Same 768px breakpoint the template uses to show it. */
+@media screen and (min-width: 768px) {
+  .home_scroll {
+    text-align: center;
+  }
+  .home_scroll-button {
+    margin-left: 0;
+  }
+}
