@@ -7,6 +7,7 @@ let navMenu = document.getElementById("nav-menu"),
 if (navToggle) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.add("show-menu");
+    navToggle.setAttribute("aria-expanded", "true");
   });
 }
 
@@ -14,6 +15,7 @@ if (navToggle) {
 if (navClose) {
   navClose.addEventListener("click", () => {
     navMenu.classList.remove("show-menu");
+    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
   });
 }
 
@@ -66,4 +68,17 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+});
+
+// KEYBOARD ACCESS FOR ICON CONTROLS
+// These are <i>/<div> elements, so they are not focusable and do not fire a
+// click on Enter/Space the way a <button> does.
+[navToggle, navClose, themeButton].forEach((el) => {
+  if (!el) return;
+  el.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      event.preventDefault();
+      el.click();
+    }
+  });
 });

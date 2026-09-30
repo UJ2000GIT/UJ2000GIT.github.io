@@ -1,37 +1,62 @@
 // Formspree code
 const form = document.getElementById("contact-form");
 
+// Show a message in the banner above the form. Failures stay up longer so the
+// visitor has time to read the fallback address and copy their message.
+function showFormAlert(message, ok) {
+  const status = document.getElementById("alert");
+  status.textContent = message;
+  status.classList.toggle("alert_error", !ok);
+  status.style.display = "block";
+  setTimeout(function () {
+    status.style.display = "none";
+  }, ok ? 4000 : 12000);
+}
+
 async function handleSubmit(event) {
   event.preventDefault();
-  var status = document.getElementById("alert");
-  var data = new FormData(event.target);
-  fetch(event.target.action, {
-    method: form.method,
-    body: data,
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => {
-      status.innerHTML = "Your message has been sent.";
-      document.querySelector(".alert_style").style.display = "block";
+  const data = new FormData(event.target);
 
-      // hide alert after 3 seconds
-      setTimeout(function () {
-        document.querySelector(".alert_style").style.display = "none";
-      }, 4000);
-      form.reset();
-    })
-    .catch((error) => {
-      status.innerHTML =
-        "Oops! There was a problem delivering your message, please contact via other means.";
-      document.querySelector(".alert_style").style.display = "block";
-
-      // hide alert after 3 seconds
-      setTimeout(function () {
-        document.querySelector(".alert_style").style.display = "none";
-      }, 4000);
+  try {
+    const response = await fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
     });
+
+    // fetch() only rejects on a network failure, so an HTTP error such as 429
+    // (rate limited) or 403 still lands here. Without this check the visitor
+    // would be told the message was sent when it never arrived.
+    if (response.ok) {
+      showFormAlert("Your message has been sent.", true);
+      form.reset();
+      return;
+    }
+
+    let detail = "";
+    try {
+      const body = await response.json();
+      if (body && Array.isArray(body.errors) && body.errors.length) {
+        detail = " " + body.errors.map((e) => e.message).join(" ");
+      }
+    } catch (e) {
+      // no JSON body; the generic message below still applies
+    }
+    // Deliberately not resetting the form: the visitor keeps what they typed.
+    showFormAlert(
+      "Your message was not sent." +
+        detail +
+        " Please email me directly at joshiutsav2000@gmail.com.",
+      false
+    );
+  } catch (error) {
+    showFormAlert(
+      "Your message could not be sent. Please check your connection, or email me directly at joshiutsav2000@gmail.com.",
+      false
+    );
+  }
 }
 form.addEventListener("submit", handleSubmit);
 
@@ -60,6 +85,7 @@ let navMenu = document.getElementById("nav-menu"),
 if (navToggle) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.add("show-menu");
+    navToggle.setAttribute("aria-expanded", "true");
   });
 }
 
@@ -67,6 +93,7 @@ if (navToggle) {
 if (navClose) {
   navClose.addEventListener("click", () => {
     navMenu.classList.remove("show-menu");
+    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
   });
 }
 
@@ -76,6 +103,7 @@ const navLink = document.querySelectorAll(".nav_link");
 function linkAction() {
   navMenu = document.getElementById("nav-menu");
   navMenu.classList.remove("show-menu");
+  if (navToggle) navToggle.setAttribute("aria-expanded", "false");
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
@@ -245,4 +273,18 @@ var typed = new Typed(".type", {
   backDelay: 1000,
   backSpeed: 60,
   loop: true,
+});
+
+// KEYBOARD ACCESS FOR ICON CONTROLS
+// The theme toggle and the menu buttons are <i>/<div> elements, so a browser
+// will not focus them or fire a click on Enter/Space the way it does a
+// <button>. These give them the same behaviour without changing the layout.
+[navToggle, navClose, themeButton].forEach((el) => {
+  if (!el) return;
+  el.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      event.preventDefault();
+      el.click();
+    }
+  });
 });

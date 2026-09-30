@@ -467,3 +467,33 @@ body.dark-theme textarea:focus-visible {
     margin-left: 0;
   }
 }
+
+/* ---- Contact form: a failed send must not look like a successful one ---- */
+.alert_style.alert_error {
+  background-color: hsl(0, 65%, 42%);
+}
+
+/* ---- Fallback when the icon font fails to load ----
+   Every icon is a glyph from the unicons CDN. If that request fails the icon
+   elements collapse to zero width, which makes the theme toggle and the mobile
+   menu button impossible to tap. The onerror handler on the stylesheet sets
+   .no-icons, and these rules put readable text back in their place. */
+.no-icons #theme-button::before,
+.no-icons #nav-toggle::before,
+.no-icons #nav-close::before,
+.no-icons .scrollup::before,
+.no-icons .footer_social::before,
+.no-icons .home_social-icon::before {
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  font-style: normal;
+}
+.no-icons #theme-button::before { content: "Theme"; }
+.no-icons #nav-toggle::before { content: "Menu"; }
+.no-icons #nav-close::before { content: "Close"; }
+.no-icons .scrollup::before { content: "Top"; padding: 0 0.2rem; }
+.no-icons .footer_social::before,
+.no-icons .home_social-icon::before { content: attr(aria-label); }
+.no-icons .footer_social,
+.no-icons .home_social-icon { margin-right: var(--mb-1); }

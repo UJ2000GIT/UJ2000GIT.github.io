@@ -27,7 +27,8 @@
   <meta name="twitter:image" content="https://utsavaj.github.io/assets/img/share-card.png" />
   <meta name="theme-color" content="#7d6bd6">
   <link rel="canonical" href="https://utsavaj.github.io" />
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    onerror="document.documentElement.classList.add('no-icons')" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Utsav Amrish Joshi | Mechanical &amp; Manufacturing Engineer</title>
   <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
@@ -65,6 +66,16 @@
 </head>
 
 <body>
+  <!-- Apply the saved theme before anything paints. main.js runs at the end of
+       the page, so without this a returning dark-mode visitor sees the light
+       background flash first. -->
+  <script>
+    try {
+      if (localStorage.getItem("selected-theme") === "dark") {
+        document.body.classList.add("dark-theme");
+      }
+    } catch (e) {}
+  </script>
   <!-- Header -->
   <header class="header" id="header">
     <nav class="nav container">
@@ -103,12 +114,14 @@
             </a>
           </li>
         </ul>
-        <i class="uil uil-times nav_close" id="nav-close"></i>
+        <i class="uil uil-times nav_close" id="nav-close" role="button" tabindex="0" aria-label="Close menu"></i>
       </div>
 
       <div class="nav_btns">
-        <i class="uil uil-moon change-theme" id="theme-button"></i>
-        <div class="nav_toggle" id="nav-toggle">
+        <i class="uil uil-moon change-theme" id="theme-button" role="button" tabindex="0"
+          aria-label="Toggle dark mode"></i>
+        <div class="nav_toggle" id="nav-toggle" role="button" tabindex="0" aria-label="Open menu"
+          aria-controls="nav-menu" aria-expanded="false">
           <i class="uil uil-apps"></i>
         </div>
       </div>
@@ -843,7 +856,7 @@
           <div id="alert" class="alert_style"></div>
           <div class="contact_inputs grid">
             <div class="contact_content">
-              <label class="contact_label">Name</label>
+              <label for="name" class="contact_label">Name</label>
               <input type="text" name="name" class="contact_input" id="name" required>
             </div>
             <div class="contact_content">
@@ -888,10 +901,12 @@
         </ul>
 
         <div class="footer_socials">
-          <a href="https://www.linkedin.com/in/utsav-joshi/" target="_blank" rel="noopener noreferrer" class="footer_social">
+          <a href="https://www.linkedin.com/in/utsav-joshi/" target="_blank" rel="noopener noreferrer" class="footer_social"
+            aria-label="LinkedIn">
             <i class="uil uil-linkedin-alt"></i>
           </a>
-          <a href="https://github.com/utsavaj" target="_blank" rel="noopener noreferrer" class="footer_social">
+          <a href="https://github.com/utsavaj" target="_blank" rel="noopener noreferrer" class="footer_social"
+            aria-label="GitHub">
             <i class="uil uil-github-alt"></i>
           </a>
         </div>
@@ -902,7 +917,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" class="scrollup" id="scroll-up">
+  <a href="#" class="scrollup" id="scroll-up" aria-label="Back to top">
     <i class="uil uil-arrow-up scrollup_icon"></i>
   </a>
 
