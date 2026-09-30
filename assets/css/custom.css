@@ -368,25 +368,6 @@ body.dark-theme textarea:focus-visible {
   outline-color: hsl(var(--hue-color), 69%, 72%);
 }
 
-/* ---- Hero title: name + role in one h1 ---- */
-.home_title {
-  margin-bottom: var(--mb-1);
-}
-.home_title-role {
-  display: block;
-  margin-top: 0.4rem;
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
-  line-height: 1.35;
-  color: var(--text-color);
-}
-
-/* ---- Skills: grouped chips ---- */
-.skills_groups {
-  display: grid;
-  gap: var(--mb-2);
-  max-width: 820px;
-}
 /* chips inside a group read as tags, not cards */
 .skills_group .skills_chips {
   gap: 0.6rem;

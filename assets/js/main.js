@@ -231,3 +231,16 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 
+// Typing animation (skipped for visitors who prefer reduced motion;
+// the span is pre-filled with "Mechanical" so the line reads correctly without JS)
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  new Typed(".type", {
+    strings: ["Mechanical", "Manufacturing", "Quality", "Design"],
+    smartBackspace: true,
+    startDelay: 1000,
+    typeSpeed: 130,
+    backDelay: 1000,
+    backSpeed: 60,
+    loop: true,
+  });
+}
