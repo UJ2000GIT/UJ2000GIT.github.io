@@ -189,13 +189,6 @@
   margin-top: var(--mb-1-5);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .portfolio_details,
-  .portfolio_toggle-icon {
-    transition: none;
-  }
-}
-
 /* Footer: name | links | icons evenly spaced on one row */
 @media screen and (min-width: 768px) {
   .footer_container {
